@@ -1,0 +1,302 @@
+/* ── Shared ─────────────────────────────────── */
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionHeader h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.sectionHeader p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ── HERO ───────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-bottom: 1px solid var(--border);
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  /* left-align the hero text */
+  margin-left: max(24px, calc(50vw - 550px));
+}
+
+.heroBadge {
+  display: inline-block;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  width: fit-content;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--text);
+}
+
+.heroAccent {
+  color: var(--blue);
+}
+
+.heroSub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.btnPrimary {
+  background: var(--blue);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--blue-dark);
+}
+
+.btnSecondary {
+  background: #fff;
+  color: var(--text);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1.5px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Hero-bottle image */
+.heroVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: clamp(2rem, 7vw, 9rem);
+}
+
+/* Image styling */
+.bottleImage {
+  width: clamp(240px, 35vw, 500px);
+  height: auto;
+  border-radius: 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  animation: float 7s ease-in-out infinite;
+}
+
+/* ──────────── Animation ──────────── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+/* ── WHY US ─────────────────────────────────── */
+.whyUs {
+  background: var(--section-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── LOCATION ───────────────────────────────── */
+.location {}
+
+.mapWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.locationNote {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ── CONTACT ────────────────────────────────── */
+.contact {
+  background: var(--section-bg);
+  border-top: 1px solid var(--border);
+}
+
+.contactBox {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactBox h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contactBox>p {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.contactIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.contactLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.contactValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.footer .sectionInner {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footerSub {
+  margin-top: 4px;
+  font-size: 12px !important;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .heroVisual {
+    display: none;
+  }
+
+  .heroInner {
+    margin-left: 0;
+    padding: 60px 24px;
+  }
+
+  .sectionInner {
+    padding: 60px 20px;
+  }
+}
