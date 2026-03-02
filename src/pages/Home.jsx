@@ -1,8 +1,8 @@
-import Hero from '../components/Hero'
-import WhyUs from '../components/WhyUs'
-import Location from '../components/Location'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
+import Hero from '../sections/Hero'
+import WhyUs from '../sections/WhyUs'
+import Location from '../sections/Location'
+import Contact from '../sections/Contact'
+import Footer from '../sections/Footer'
 
 export default function Home() {
   return (
