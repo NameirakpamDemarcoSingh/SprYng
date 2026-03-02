@@ -1,0 +1,67 @@
+/* ── Shared ─────────────────────────────────── */
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionHeader h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.sectionHeader p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ── WHY US ─────────────────────────────────── */
+.whyUs {
+  background: var(--section-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}

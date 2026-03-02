@@ -1,0 +1,27 @@
+/* ── Shared ─────────────────────────────────── */
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.footer .sectionInner {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footerSub {
+  margin-top: 4px;
+  font-size: 12px !important;
+}

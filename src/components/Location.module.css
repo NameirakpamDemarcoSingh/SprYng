@@ -1,0 +1,38 @@
+/* ── Shared ─────────────────────────────────── */
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionHeader h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.sectionHeader p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ── LOCATION ───────────────────────────────── */
+.mapWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.locationNote {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}

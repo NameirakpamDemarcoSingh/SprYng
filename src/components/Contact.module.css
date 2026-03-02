@@ -1,0 +1,68 @@
+/* ── Shared ─────────────────────────────────── */
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* ── CONTACT ────────────────────────────────── */
+.contact {
+  background: var(--section-bg);
+  border-top: 1px solid var(--border);
+}
+
+.contactBox {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactBox h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contactBox>p {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.contactIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.contactLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.contactValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+}
