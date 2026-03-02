@@ -8,7 +8,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/SprYng" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
       </Routes>
     </BrowserRouter>
