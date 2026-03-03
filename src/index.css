@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -35,4 +37,21 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.autoShow {
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

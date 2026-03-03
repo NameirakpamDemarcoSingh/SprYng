@@ -12,7 +12,7 @@ export default function Location({
 }) {
   return (
     <section className={styles.location} id="location">
-      <div className={styles.sectionInner}>
+      <div className={`${styles.sectionInner} autoShow`}>
         <div className={styles.sectionHeader}>
           <h2>{header.title}</h2>
           <p>{header.subtitle}</p>

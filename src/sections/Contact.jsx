@@ -9,11 +9,11 @@ export default function Contact({
   },
   phone = '+91 99999 99999',
   email = 'hello@spryng.in',
-  location = 'Manipur, India',
+  location = 'Imphal West, Canchipur, Manipur',
 }) {
   return (
     <section className={styles.contact} id="contact">
-      <div className={styles.sectionInner}>
+      <div className={`${styles.sectionInner} autoShow`}>
         <div className={styles.contactBox}>
           <h2>{header.title}</h2>
           <p>{header.subtitle}</p>

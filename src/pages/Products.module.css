@@ -200,7 +200,7 @@
   border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
   border: none;
   outline: none;
   cursor: pointer;

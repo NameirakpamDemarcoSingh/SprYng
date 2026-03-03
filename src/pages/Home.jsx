@@ -1,4 +1,5 @@
 import Hero from '../sections/Hero'
+import Animate from '../sections/Animate';
 import WhyUs from '../sections/WhyUs'
 import Location from '../sections/Location'
 import Contact from '../sections/Contact'
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Animate />
       <WhyUs />
       <Location />
       <Contact />

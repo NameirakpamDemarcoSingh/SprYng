@@ -30,7 +30,7 @@ export default function WhyUs({
 }) {
   return (
     <section className={styles.whyUs} id="why-us">
-      <div className={styles.sectionInner}>
+      <div className={`${styles.sectionInner} autoShow`}>
         <div className={styles.sectionHeader}>
           <h2>{header.title}</h2>
           <p>{header.subtitle}</p>
