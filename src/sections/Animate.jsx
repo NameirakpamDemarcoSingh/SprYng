@@ -4,7 +4,7 @@ import scenery from '../assets/scenery.jpg'
 
 export default function Animate() {
     return (
-        <section id='home'>
+        <section id="home">
             <div className={styles.banner} style={{ backgroundImage: `url(${scenery})` }}>
                 <div className={styles.textBlock}>
                     <div className="autoShow">
