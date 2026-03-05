@@ -1,27 +1,96 @@
-/* ── Shared ─────────────────────────────────── */
-.sectionInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-/* ── FOOTER ─────────────────────────────────── */
 .footer {
-  border-top: 1px solid var(--border);
-  background: #fff;
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 60%, #bae6fd 100%);
+  position: relative;
+  overflow: clip;
 }
 
-.footer .sectionInner {
-  padding: 32px 24px;
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── INNER ───────────────────────────────── */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 40px 40px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  gap: 16px;
 }
 
-.footer p {
-  font-size: 14px;
+/* ── DIVIDER ─────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin: 8px 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.35), transparent);
+}
+
+.dividerDrop {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(14, 165, 233, 0.3));
+}
+
+/* ── BOTTOM ──────────────────────────────── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   color: var(--muted);
+  padding-top: 16px;
+  border-top: 1px solid rgba(14, 165, 233, 0.15);
 }
 
-.footerSub {
-  margin-top: 4px;
-  font-size: 12px !important;
+.madeIn {
+  font-style: italic;
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media (max-width: 768px) {
+  .inner {
+    padding: 40px 24px 32px;
+  }
+
+  .brandName {
+    font-size: 2.2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
