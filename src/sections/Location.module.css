@@ -1,38 +1,214 @@
-/* ── Shared ─────────────────────────────────── */
-.sectionInner {
-  max-width: 1100px;
+.section {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 100%);
+  position: relative;
+  overflow: clip;
+  padding: 80px 40px 100px;
+}
+
+/* Decorative blobs */
+.section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  left: -80px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 32px;
+  align-items: stretch;
 }
 
-.sectionHeader {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.sectionHeader h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text);
-}
-
-.sectionHeader p {
-  font-size: 16px;
-  color: var(--muted);
-}
-
-/* ── LOCATION ───────────────────────────────── */
-.mapWrap {
-  border-radius: 12px;
+/* ── MAP HERO ────────────────────────────── */
+.mapHero {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 520px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 20px 60px rgba(14, 165, 233, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
 }
 
-.locationNote {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+.mapHero iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Top and bottom gradient fades on the map */
+.overlayTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(240, 249, 255, 0.6), transparent);
+  pointer-events: none;
+}
+
+.overlayBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(0deg, rgba(224, 242, 254, 0.5), transparent);
+  pointer-events: none;
+}
+
+/* ── FLOATING CARD ───────────────────────── */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 20px;
+  padding: 32px 36px;
+  box-shadow:
+    0 8px 40px rgba(14, 165, 233, 0.15),
+    0 2px 12px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── CARD HEADER ─────────────────────────── */
+.eyebrow {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blue-dark);
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ── DIVIDER ─────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.3), transparent);
+}
+
+.dividerDrop {
+  font-size: 0.85rem;
+  filter: drop-shadow(0 2px 4px rgba(14, 165, 233, 0.3));
+}
+
+/* ── DETAILS ─────────────────────────────── */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.detailLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--muted);
+  padding-top: 3px;
+}
+
+.detailValue {
+  font-family: 'Georgia', serif;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── DIRECTIONS BUTTON ───────────────────── */
+.directionsBtn {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 4px;
+  padding: 10px 24px;
+  background: var(--blue);
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);
+}
+
+.directionsBtn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px 60px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mapHero {
+    min-height: 300px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
 }
