@@ -4,6 +4,7 @@ import bottle1 from '../assets/bottle1.jpeg'
 import bottle2 from '../assets/bottle2.jpeg'
 import bottle3 from '../assets/bottle3.jpeg'
 import bottle4 from '../assets/bottle4.jpeg'
+import Footer from '../sections/Footer'
 
 const products = [
   {
@@ -127,6 +128,8 @@ export default function Products() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }
