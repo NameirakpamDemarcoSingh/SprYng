@@ -1,67 +1,252 @@
-/* ── Shared ─────────────────────────────────── */
-.sectionInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
+.section {
+  background: var(--blue-light);
+  padding: 100px 40px;
+  overflow: clip;
 }
 
-.sectionHeader {
+/* ── HEADER ──────────────────────────────── */
+.header {
+  max-width: 600px;
+  margin: 0 auto 80px;
   text-align: center;
-  margin-bottom: 48px;
 }
 
-.sectionHeader h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.label {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blue-dark);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 2.6rem;
+  font-weight: 900;
   color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
 }
 
-.sectionHeader p {
-  font-size: 16px;
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.95rem;
   color: var(--muted);
+  line-height: 1.7;
 }
 
-/* ── WHY US ─────────────────────────────────── */
-.whyUs {
-  background: var(--section-bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+/* ── TRACK ───────────────────────────────── */
+.track {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+/* The horizontal connecting line */
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--border) 10%,
+    var(--blue) 50%,
+    var(--border) 90%,
+    transparent
+  );
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
-.card {
+/* ── STEP ────────────────────────────────── */
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+  z-index: 1;
+}
+
+/* alternate above/below the line */
+.stepAbove {
+  flex-direction: column-reverse;
+  margin-bottom: 220px;
+}
+
+.stepBelow {
+  flex-direction: column;
+  margin-top: 220px;
+}
+
+/* ── NODE (dot on line) ──────────────────── */
+.node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: #fff;
+  border: 2px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  margin: 12px 0;
+}
+
+.nodeInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.step:hover .node {
+  transform: scale(1.3);
+  border-color: var(--blue-dark);
+}
+
+.step:hover .nodeInner {
+  transform: scale(1.2);
+  background: var(--blue-dark);
+}
+
+/* ── CARD ────────────────────────────────── */
+.card {
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px 24px;
-  transition: box-shadow 0.2s, transform 0.2s;
+  border-radius: 16px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  cursor: default;
 }
 
-.card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-  transform: translateY(-2px);
+.step:hover .card {
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
+  transform: translateY(-4px);
+  border-color: var(--blue);
 }
 
-.cardIcon {
-  font-size: 28px;
-  margin-bottom: 14px;
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cardTitle {
-  font-size: 16px;
+.stageLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.stepNum {
+  font-family: 'Georgia', serif;
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text);
+  color: var(--border);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 
-.cardDesc {
-  font-size: 14px;
+.step:hover .stepNum {
+  color: var(--blue);
+}
+
+.stepTitle {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.statPill {
+  display: inline-block;
+  width: fit-content;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.stepDesc {
+  font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.6;
+  margin: 0;
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 24px;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .track {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+  }
+
+  .line {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    right: unset;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+      transparent,
+      var(--border) 5%,
+      var(--blue) 50%,
+      var(--border) 95%,
+      transparent
+    );
+    transform: none;
+  }
+
+  .step,
+  .stepAbove,
+  .stepBelow {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 24px 0 24px 0;
+    gap: 20px;
+  }
+
+  .node {
+    margin: 4px 0 0 0;
+    flex-shrink: 0;
+  }
+
+  .card {
+    flex: 1;
+  }
 }
