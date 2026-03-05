@@ -1,6 +1,6 @@
 .banner {
     height: 100vh;
-    overflow: hidden;
+    overflow: clip;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -12,8 +12,8 @@
     height: 500px;
     position: absolute;
     bottom: 170px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
+    right: 15%;
+    transform: scale(0.8);
     z-index: 1;
     transition: 0.7s;
     --left: -5px;
@@ -41,7 +41,7 @@
 
 .product:hover {
     --left: -145px;
-    transform: translateX(-50%) translateY(-100px) scale(1);
+    transform: translateY(-100px) scale(1);
 }
 
 .water {
@@ -71,5 +71,136 @@
     100% {
         opacity: 0.6;
         transform: translateY(0) scale(1.6);
+    }
+}
+
+.textBlock {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+}
+
+.eyebrow {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    margin: 0;
+}
+
+.lineOne {
+    font-family: 'Georgia', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+.lineTwo {
+    font-family: 'Georgia', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+    letter-spacing: -0.01em;
+}
+
+.lineThree {
+    font-family: 'Georgia', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    margin: 4px 0;
+}
+
+.subtext {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .textBlock {
+        position: relative;
+        left: unset;
+        top: unset;
+        transform: none;
+        text-align: center;
+        align-items: center;
+        padding: 0 24px 0;
+        gap: 8px;
+        z-index: 3;
+        flex-shrink: 0;
+    }
+
+    .lineOne,
+    .lineTwo,
+    .lineThree {
+        font-size: 3rem;
+    }
+
+    .subtext {
+        font-size: 0.85rem;
+    }
+
+    .product {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        width: 200px;
+        height: 320px;
+        transform: scale(1);
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .product:hover {
+        --left: -90px;
+        transform: translateY(-40px) scale(1.2);
+    }
+
+    .drink {
+        bottom: -50px;
+        width: 120px;
+    }
+
+    .water {
+        bottom: -60px;
+        width: 200px;
     }
 }
