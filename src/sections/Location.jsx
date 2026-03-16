@@ -60,12 +60,7 @@ export default function Location({
             </div>
           </div>
 
-
-          <a href="https://maps.google.com/?q=24.745608,93.927677"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.directionsBtn}
-          >
+          <a href="https://maps.google.com/?q=24.745608,93.927677" target="_blank" rel="noreferrer" className={styles.directionsBtn}>
             Get Directions ↗
           </a>
         </div>

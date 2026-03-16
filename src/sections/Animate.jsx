@@ -1,6 +1,6 @@
 import styles from './Animate.module.css';
 import water from '../assets/splash.png'
-import scenery from '../assets/scenery.jpg'
+import scenery from '../assets/scenery.webp'
 
 export default function Animate() {
     return (

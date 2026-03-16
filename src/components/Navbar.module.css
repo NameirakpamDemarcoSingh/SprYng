@@ -59,24 +59,129 @@
   color: var(--text);
 }
 
+/* Override the background:none above for the CTA button */
+.links button.ctaLink {
+  background: var(--blue);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.links button.ctaLink:hover {
+  background: var(--blue-dark);
+  color: #fff;
+}
+
 .activeLink {
   color: var(--blue) !important;
   font-weight: 700;
 }
 
+/* ── CTA / PRODUCTS BUTTON ── */
 .ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--blue);
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 14px;
   transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .ctaLink:hover {
   background: var(--blue-dark) !important;
+  color: #fff !important;
 }
 
+.ctaLinkActive {
+  background: var(--blue-dark) !important;
+}
+
+/* Chevron icon */
+.chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── DROPDOWN CONTAINER ── */
+.dropdown {
+  position: relative;
+}
+
+/* ── DROPDOWN MENU ── */
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  min-width: 210px;
+  animation: dropIn 0.18s ease;
+  z-index: 200;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── DROPDOWN ITEMS ── */
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.15s;
+}
+
+.dropdownItem:hover {
+  background: var(--section-bg, #f8fafc);
+}
+
+.dropdownItemActive {
+  background: var(--blue-light, #e0f2fe);
+}
+
+.dropdownItemActive .dropdownLabel {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.dropdownIcon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.dropdownLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.dropdownSub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .by {
     display: none;
@@ -86,8 +191,18 @@
     gap: 16px;
   }
 
-  .links button:not(.ctaLink),
-  .links a:not(.ctaLink) {
+  /* Only hide direct nav links/buttons, not items inside the dropdown */
+  .links > a,
+  .links > button:not([class*="ctaLink"]) {
     display: none;
+  }
+
+  /* Always show dropdown items when menu is open */
+  .dropdownItem {
+    display: flex !important;
+  }
+
+  .dropdownMenu {
+    right: 0;
   }
 }

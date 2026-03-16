@@ -1,5 +1,5 @@
 import styles from './Hero.module.css';
-import defaultImage from '../assets/bottle-hero.jpeg';
+import defaultImage from '../assets/bottle-hero.webp';
 
 export default function Hero({
   badge = 'Packaged Drinking Water · Manipur, India',

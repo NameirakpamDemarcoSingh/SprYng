@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './Products.module.css'
-import bottle1 from '../assets/bottle1.jpeg'
-import bottle2 from '../assets/bottle2.jpeg'
-import bottle3 from '../assets/bottle3.jpeg'
-import bottle4 from '../assets/bottle4.jpeg'
+import bottle1 from '../assets/bottle1.webp'
+import bottle2 from '../assets/bottle2.webp'
+import bottle3 from '../assets/bottle3.webp'
+import bottle4 from '../assets/bottle4.webp'
 import Footer from '../sections/Footer'
 
 const products = [
