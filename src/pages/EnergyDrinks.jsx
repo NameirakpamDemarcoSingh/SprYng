@@ -4,7 +4,7 @@ import drink1 from '../assets/drink1.webp'
 import drink2 from '../assets/drink2.webp'
 import drink3 from '../assets/drink3.webp'
 import drink4 from '../assets/drink4.webp'
-import drinkHero from '../assets/drink-Hero.png'
+import drinkHero from '../assets/drink-hero.png'
 
 const drinks = [
   {
