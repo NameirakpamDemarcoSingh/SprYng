@@ -85,7 +85,10 @@ export default function Navbar() {
           </button>
 
           {/* ── PRODUCTS DROPDOWN ── */}
-          <div className={styles.dropdown} ref={dropdownRef}>
+          <div className={styles.dropdown}
+            ref={dropdownRef}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}>
             <button
               className={`${styles.ctaLink} ${isProductsActive ? styles.ctaLinkActive : ''}`}
               onClick={() => setDropdownOpen((prev) => !prev)}
