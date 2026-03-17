@@ -4,6 +4,7 @@ import drink1 from '../assets/drink1.webp'
 import drink2 from '../assets/drink2.webp'
 import drink3 from '../assets/drink3.webp'
 import drink4 from '../assets/drink4.webp'
+import drinkHero from '../assets/drink-Hero.png'
 
 const drinks = [
   {
@@ -86,34 +87,39 @@ export default function EnergyDrinks() {
             <div key={i} className={styles.heroGridCell} />
           ))}
         </div>
-        <div className={styles.inner}>
-          <div className={styles.heroEyebrow}>
-            <span className={styles.heroDot} />
-            SPRYNG ENERGY — NEW LINE
+        <div className={styles.heroLayout}>
+          <div className={styles.inner}>
+            <div className={styles.heroEyebrow}>
+              <span className={styles.heroDot} />
+              SPRYNG ENERGY — NEW LINE
+            </div>
+            <h1 className={styles.heroTitle}>
+              FUEL YOUR
+              <br />
+              <span className={styles.heroAccent}>NEXT LEVEL.</span>
+            </h1>
+            <p className={styles.heroSub}>
+              Four formulas. Zero compromise. Built for people who don't slow down.
+            </p>
+            <div className={styles.heroStats}>
+              <div className={styles.heroStat}>
+                <span className={styles.heroStatNum}>4</span>
+                <span className={styles.heroStatLabel}>Flavours</span>
+              </div>
+              <div className={styles.heroStatDiv} />
+              <div className={styles.heroStat}>
+                <span className={styles.heroStatNum}>160mg</span>
+                <span className={styles.heroStatLabel}>Max Caffeine</span>
+              </div>
+              <div className={styles.heroStatDiv} />
+              <div className={styles.heroStat}>
+                <span className={styles.heroStatNum}>0g</span>
+                <span className={styles.heroStatLabel}>Sugar Option</span>
+              </div>
+            </div>
           </div>
-          <h1 className={styles.heroTitle}>
-            FUEL YOUR
-            <br />
-            <span className={styles.heroAccent}>NEXT LEVEL.</span>
-          </h1>
-          <p className={styles.heroSub}>
-            Four formulas. Zero compromise. Built for people who don't slow down.
-          </p>
-          <div className={styles.heroStats}>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>4</span>
-              <span className={styles.heroStatLabel}>Flavours</span>
-            </div>
-            <div className={styles.heroStatDiv} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>160mg</span>
-              <span className={styles.heroStatLabel}>Max Caffeine</span>
-            </div>
-            <div className={styles.heroStatDiv} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>0g</span>
-              <span className={styles.heroStatLabel}>Sugar Option</span>
-            </div>
+          <div className={styles.heroImageWrap}>
+            <img src={drinkHero} alt="Spryng Energy" className={styles.heroImage} />
           </div>
         </div>
         <div className={styles.heroScroll}>SCROLL DOWN</div>

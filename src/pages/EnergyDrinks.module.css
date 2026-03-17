@@ -116,6 +116,7 @@
   color: transparent;
   -webkit-text-stroke: 2px #00ff87;
   text-shadow: 0 0 40px rgba(0,255,135,0.4);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .heroSub {
@@ -171,6 +172,38 @@
   letter-spacing: 3px;
   color: rgba(255,255,255,0.2);
   writing-mode: vertical-rl;
+}
+
+.heroLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.heroImageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  width: 85%;
+  max-width: 420px;
+  border-radius: 32px;
+  object-fit: contain;
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
 }
 
 /* ── PRODUCTS SECTION ─────────────────────────── */
@@ -517,6 +550,14 @@
   .heroScroll {
     display: none;
   }
+
+  .heroLayout {
+    grid-template-columns: 1fr;
+  }
+  .heroImageWrap {
+    display: none;
+  }
+
   .products {
     padding: 60px 0 72px;
   }
